@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StableCoin Hub - Discover the Best Stablecoin Tools & Platforms</title>
+    <meta name="description" content="The ultimate directory for stablecoin tools, platforms, exchanges, and DeFi protocols. Find the best stablecoin solutions for beginners and professionals.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+        .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 0.6s ease forwards; }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+        .category-badge { background: linear-gradient(45deg, #6366f1, #8b5cf6); }
+        .tool-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        
+        /* Enhanced responsive styles */
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2.5rem !important; }
+            .hero-subtitle { font-size: 1.125rem !important; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+            .tool-card { padding: 1rem !important; }
+            .modal-content { margin: 1rem !important; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title { font-size: 2rem !important; }
+            .categories-grid { grid-template-columns: 1fr !important; }
+            .tools-grid { grid-template-columns: 1fr !important; }
+            .form-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl sm:text-2xl font-bold text-indigo-600">StableCoin Hub</h1>
+                    </div>
+                    <div class="hidden md:block ml-6 lg:ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="#" onclick="showSection('home')" class="nav-link text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="#" onclick="showSection('categories')" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Browse</a>
+                            <a href="#" onclick="showSection('submit')" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Submit Tool</a>
+                            <a href="#" onclick="showSection('about')" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-400 hover:text-gray-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" onclick="showSection('home')" class="block px-3 py-2 text-gray-900 hover:text-indigo-600">Home</a>
+                <a href="#" onclick="showSection('categories')" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">Browse</a>
+                <a href="#" onclick="showSection('submit')" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">Submit Tool</a>
+                <a href="#" onclick="showSection('about')" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home-section" class="section-content">
+        <!-- Hero Section -->
+        <div class="gradient-bg py-12 sm:py-16 lg:py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="hero-title text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 fade-in">
+                    Discover the Best <span class="text-yellow-300">Stablecoin</span> Tools
+                </h1>
+                <p class="hero-subtitle text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto fade-in px-4">
+                    The ultimate directory for stablecoin platforms, DeFi protocols, exchanges, and analytics tools. 
+                    Find everything you need for the stablecoin ecosystem in one place.
+                </p>
+                
+
+
+                <!-- Stats -->
+                <div class="stats-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto fade-in px-4">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                        <div class="text-xl sm:text-2xl font-bold text-white">95+</div>
+                        <div class="text-sm sm:text-base text-white/80">Tools Listed</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                        <div class="text-xl sm:text-2xl font-bold text-white">8</div>
+                        <div class="text-sm sm:text-base text-white/80">Categories</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                        <div class="text-xl sm:text-2xl font-bold text-white">21</div>
+                        <div class="text-sm sm:text-base text-white/80">Stablecoins</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4">
+                        <div class="text-xl sm:text-2xl font-bold text-white">Updated</div>
+                        <div class="text-sm sm:text-base text-white/80">Daily</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Categories -->
+        <div class="py-12 sm:py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Browse by Category</h2>
+                    <p class="text-base sm:text-lg text-gray-600 px-4">Explore stablecoin tools organized by use case and expertise level</p>
+                </div>
+
+                <div class="categories-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6" id="categories-grid">
+                    <!-- Categories will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Tools -->
+        <div class="py-12 sm:py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 sm:mb-12 gap-4">
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">Trending Tools</h2>
+                        <p class="text-base sm:text-lg text-gray-600">Most popular stablecoin tools this week</p>
+                    </div>
+                    <button onclick="showSection('categories')" class="bg-indigo-600 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg hover:bg-indigo-700 transition text-sm sm:text-base">
+                        View All Tools
+                    </button>
+                </div>
+
+                <div class="tools-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" id="trending-tools">
+                    <!-- Trending tools will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="categories-section" class="section-content hidden">
+        <div class="py-12 sm:py-16">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Added Back to Home button -->
+                <div class="mb-6">
+                    <button onclick="showSection('home')" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 transition-colors text-sm sm:text-base">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Home
+                    </button>
+                </div>
+                
+                <div class="mb-6 sm:mb-8">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Browse All Categories</h1>
+                    <p class="text-base sm:text-lg text-gray-600 px-4 sm:px-0">Explore 95+ carefully curated stablecoin tools organized by category</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="bg-white rounded-lg shadow-sm p-4 sm:p-6 mb-6 sm:mb-8">
+                    <div class="form-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                            <select id="category-filter" onchange="filterTools()" class="w-full border-gray-300 rounded-md text-sm">
+                                <option value="">All Categories</option>
+                                <option value="stablecoins">Stablecoins</option>
+                                <option value="exchanges">Exchanges</option>
+                                <option value="defi">DeFi Protocols</option>
+                                <option value="analytics">Analytics</option>
+                                <option value="payments">Payments</option>
+                                <option value="infrastructure">Infrastructure</option>
+                                <option value="compliance">Compliance</option>
+                                <option value="education">Education</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Pricing</label>
+                            <select id="pricing-filter" onchange="filterTools()" class="w-full border-gray-300 rounded-md text-sm">
+                                <option value="">All Pricing</option>
+                                <option value="free">Free</option>
+                                <option value="freemium">Freemium</option>
+                                <option value="paid">Paid</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">User Level</label>
+                            <select id="level-filter" onchange="filterTools()" class="w-full border-gray-300 rounded-md text-sm">
+                                <option value="">All Levels</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="professional">Professional</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Blockchain</label>
+                            <select id="blockchain-filter" onchange="filterTools()" class="w-full border-gray-300 rounded-md text-sm">
+                                <option value="">All Blockchains</option>
+                                <option value="ethereum">Ethereum</option>
+                                <option value="multichain">Multi-chain</option>
+                                <option value="bsc">Binance Smart Chain</option>
+                                <option value="polygon">Polygon</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+                            <select id="sort-filter" onchange="filterTools()" class="w-full border-gray-300 rounded-md text-sm">
+                                <option value="popularity">Popularity</option>
+                                <option value="name">Name A-Z</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools Grid -->
+                <div class="tools-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" id="tools-grid">
+                    <!-- Tools will be populated by JavaScript -->
+                </div>
+
+                <div id="no-results" class="hidden text-center py-12">
+                    <div class="text-gray-400 text-4xl sm:text-6xl mb-4">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">No tools found</h3>
+                    <p class="text-gray-600 text-sm sm:text-base">Try adjusting your filters or search terms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Submit Tool Section -->
+    <section id="submit-section" class="section-content hidden">
+        <div class="py-12 sm:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Submit a Stablecoin Tool</h1>
+                    <p class="text-base sm:text-lg text-gray-600 px-4 sm:px-0">Help grow the largest stablecoin tools directory! Click below to submit your tool via our Google Form.</p>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 text-center">
+                    <div class="text-4xl sm:text-6xl mb-6">📝</div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Ready to Submit Your Tool?</h3>
+                    <p class="text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                        Click the button below to open our submission form. We'll collect all the details about your stablecoin tool and review it within 5 business days.
+                    </p>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
+                        <h4 class="font-semibold text-gray-900 mb-3 text-sm sm:text-base">What we'll ask for:</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 text-xs sm:text-sm text-gray-600">
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Tool name & website
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Category & pricing
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Description & features
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                Your contact info
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openGoogleForm()" class="bg-indigo-600 text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg hover:bg-indigo-700 transition font-semibold text-base sm:text-lg inline-flex items-center">
+                        <i class="fas fa-external-link-alt mr-3"></i>
+                        Open Submission Form
+                    </button>
+                    
+                    <p class="text-xs sm:text-sm text-gray-500 mt-4 mb-6">
+                        Form opens in a new tab • Takes 2-3 minutes to complete
+                    </p>
+                    
+                    <div class="bg-gray-50 rounded-lg p-4 text-left">
+                        <h4 class="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Submission Guidelines</h4>
+                        <ul class="text-xs sm:text-sm text-gray-600 space-y-1">
+                            <li>✓ Tool must be related to stablecoins or stablecoin ecosystem</li>
+                            <li>✓ Must be actively maintained and accessible</li>
+                            <li>✓ No scam projects or suspicious platforms</li>
+                            <li>✓ We review all submissions within 5 business days</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-section" class="section-content hidden">
+        <div class="py-12 sm:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 sm:mb-8">About StableCoin Hub</h1>
+                
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8">
+                        StableCoin Hub is the ultimate directory for discovering and comparing stablecoin tools, platforms, and services. 
+                        We help both beginners and professionals navigate the complex stablecoin ecosystem.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                        <div class="bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                            <h3 class="text-lg sm:text-xl font-semibold mb-4">Our Mission</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">
+                                To make stablecoin technology accessible to everyone by providing comprehensive, 
+                                unbiased information about the best tools and platforms in the ecosystem.
+                            </p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 sm:p-6 shadow-sm">
+                            <h3 class="text-lg sm:text-xl font-semibold mb-4">Why We Exist</h3>
+                            <p class="text-gray-600 text-sm sm:text-base">
+                                The stablecoin space is rapidly evolving with hundreds of new tools launching every month. 
+                                We curate and organize this information to save you time and help you make informed decisions.
+                            </p>
+                        </div>
+                    </div>
+
+                    <h2 class="text-xl sm:text-2xl font-bold mb-4">What We Cover</h2>
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6 sm:mb-8">
+                        <div class="text-center p-3 sm:p-4">
+                            <div class="text-2xl sm:text-3xl mb-2">🪙</div>
+                            <h4 class="font-semibold text-sm sm:text-base">Stablecoins</h4>
+                            <p class="text-xs sm:text-sm text-gray-600">All major stablecoin projects</p>
+                        </div>
+                        <div class="text-center p-3 sm:p-4">
+                            <div class="text-2xl sm:text-3xl mb-2">🏦</div>
+                            <h4 class="font-semibold text-sm sm:text-base">Exchanges</h4>
+                            <p class="text-xs sm:text-sm text-gray-600">CEX and DEX platforms</p>
+                        </div>
+                        <div class="text-center p-3 sm:p-4">
+                            <div class="text-2xl sm:text-3xl mb-2">🔗</div>
+                            <h4 class="font-semibold text-sm sm:text-base">DeFi</h4>
+                            <p class="text-xs sm:text-sm text-gray-600">Lending, yield, and protocols</p>
+                        </div>
+                        <div class="text-center p-3 sm:p-4">
+                            <div class="text-2xl sm:text-3xl mb-2">📊</div>
+                            <h4 class="font-semibold text-sm sm:text-base">Analytics</h4>
+                            <p class="text-xs sm:text-sm text-gray-600">Data and tracking tools</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tool Detail Modal -->
+    <div id="tool-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50" onclick="closeModal()">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="modal-content bg-white rounded-xl max-w-2xl w-full max-h-screen overflow-y-auto" onclick="event.stopPropagation()">
+                <div id="modal-content">
+                    <!-- Modal content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-lg sm:text-xl font-bold mb-4">StableCoin Hub</h3>
+                <p class="text-gray-400 text-sm sm:text-base mb-6">The ultimate directory for stablecoin tools and platforms.</p>
+                <p class="text-gray-400 text-sm sm:text-base">&copy; 2025 StableCoin Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Complete stablecoin directory data - ALL 95+ TOOLS FROM PDF
+        const categories = [
+            {
+                name: "Stablecoins",
+                icon: "fas fa-coins",
+                description: "Digital currencies pegged to stable assets",
+                count: 21,
+                color: "bg-blue-500",
+                id: "stablecoins"
+            },
+            {
+                name: "Exchanges",
+                icon: "fas fa-exchange-alt",
+                description: "Platforms for trading stablecoins",
+                count: 15,
+                color: "bg-green-500",
+                id: "exchanges"
+            },
+            {
+                name: "DeFi Protocols",
+                icon: "fas fa-link",
+                description: "Decentralized finance platforms",
+                count: 8,
+                color: "bg-purple-500",
+                id: "defi"
+            },
+            {
+                name: "Analytics",
+                icon: "fas fa-chart-bar",
+                description: "Data and tracking tools",
+                count: 16,
+                color: "bg-yellow-500",
+                id: "analytics"
+            },
+            {
+                name: "Payments",
+                icon: "fas fa-credit-card",
+                description: "Payment processors and gateways",
+                count: 10,
+                color: "bg-red-500",
+                id: "payments"
+            },
+            {
+                name: "Infrastructure",
+                icon: "fas fa-server",
+                description: "APIs, oracles, and dev tools",
+                count: 8,
+                color: "bg-indigo-500",
+                id: "infrastructure"
+            },
+            {
+                name: "Compliance",
+                icon: "fas fa-shield-alt",
+                description: "Regulatory and compliance tools",
+                count: 7,
+                color: "bg-gray-500",
+                id: "compliance"
+            },
+            {
+                name: "Education",
+                icon: "fas fa-graduation-cap",
+                description: "Learning resources and news",
+                count: 10,
+                color: "bg-pink-500",
+                id: "education"
+            }
+        ];
+
+        const tools = [
+            // STABLECOINS - USD Fiat-Collateralized
+            {
+                name: "USDC",
+                description: "Circle's USD Coin - most regulated stablecoin backed by US dollar reserves",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://circle.com",
+                logo: "🪙",
+                featured: true,
+                tags: ["Regulated", "USD-backed", "Multi-chain", "Reserve Audited"]
+            },
+            {
+                name: "USDT",
+                description: "Tether - largest stablecoin by market capitalization",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://tether.to",
+                logo: "₮",
+                featured: true,
+                tags: ["Largest Cap", "Multi-chain", "Established", "Most Liquid"]
+            },
+            {
+                name: "BUSD",
+                description: "Binance USD - exchange-issued stablecoin backed by US dollars",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://binance.com",
+                logo: "🟨",
+                featured: false,
+                tags: ["Exchange-issued", "USD-backed", "Binance", "Multi-chain"]
+            },
+            {
+                name: "GUSD",
+                description: "Gemini Dollar - regulated US stablecoin with transparency focus",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://gemini.com",
+                logo: "💚",
+                featured: false,
+                tags: ["Regulated", "Transparent", "US-based", "Gemini"]
+            },
+            {
+                name: "USDP",
+                description: "Paxos Standard - enterprise-focused regulated stablecoin",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://paxos.com",
+                logo: "🔷",
+                featured: false,
+                tags: ["Enterprise", "Regulated", "Paxos", "USD-backed"]
+            },
+            {
+                name: "TUSD",
+                description: "TrueUSD - transparency-focused stablecoin with regular attestations",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://trueusd.com",
+                logo: "🔵",
+                featured: false,
+                tags: ["Transparent", "Attested", "Multi-chain", "TrustToken"]
+            },
+            // EUR Fiat-Collateralized
+            {
+                name: "EURS",
+                description: "STASIS EURS - Euro-denominated stablecoin for European markets",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://stasis.net",
+                logo: "🇪🇺",
+                featured: false,
+                tags: ["Euro", "European", "Regional", "EUR-pegged"]
+            },
+            {
+                name: "EURT",
+                description: "Tether EUR - Tether's euro coin for European users",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://tether.to",
+                logo: "🟢",
+                featured: false,
+                tags: ["Euro", "Tether", "Regional", "Multi-chain"]
+            },
+            // Multi-Currency
+            {
+                name: "XSGD",
+                description: "Singapore Dollar stablecoin for Southeast Asian markets",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://xfers.com",
+                logo: "🇸🇬",
+                featured: false,
+                tags: ["Singapore Dollar", "Regional", "Asia", "SGD-pegged"]
+            },
+            {
+                name: "CADC",
+                description: "Canadian Dollar Coin for North American markets",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://coinsquare.com",
+                logo: "🇨🇦",
+                featured: false,
+                tags: ["Canadian Dollar", "Regional", "CAD-pegged", "North America"]
+            },
+            // Crypto-Collateralized
+            {
+                name: "DAI",
+                description: "MakerDAO's decentralized stablecoin backed by crypto collateral",
+                category: "stablecoins",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "ethereum",
+                website: "https://makerdao.com",
+                logo: "🔶",
+                featured: true,
+                tags: ["Decentralized", "Crypto-backed", "Ethereum", "DeFi Native"]
+            },
+            {
+                name: "sUSD",
+                description: "Synthetix synthetic USD stablecoin",
+                category: "stablecoins",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://synthetix.io",
+                logo: "⚡",
+                featured: false,
+                tags: ["Synthetic", "DeFi", "Advanced", "Synthetix"]
+            },
+            {
+                name: "LUSD",
+                description: "Liquity USD - immutable decentralized stablecoin protocol",
+                category: "stablecoins",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://liquity.org",
+                logo: "💎",
+                featured: false,
+                tags: ["Immutable", "Decentralized", "Zero Interest", "Ethereum"]
+            },
+            {
+                name: "MIM",
+                description: "Magic Internet Money stablecoin from Abracadabra",
+                category: "stablecoins",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://abracadabra.money",
+                logo: "🪄",
+                featured: false,
+                tags: ["Magic Internet Money", "Multi-chain", "DeFi", "Advanced"]
+            },
+            // Algorithmic
+            {
+                name: "FRAX",
+                description: "Fractional-algorithmic stablecoin with innovative stability mechanism",
+                category: "stablecoins",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://frax.finance",
+                logo: "🔺",
+                featured: false,
+                tags: ["Algorithmic", "Fractional", "Innovative", "DeFi"]
+            },
+            {
+                name: "USDD",
+                description: "TRON's decentralized USD stablecoin",
+                category: "stablecoins",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "tron",
+                website: "https://usdd.io",
+                logo: "🌊",
+                featured: false,
+                tags: ["TRON", "Decentralized", "Algorithmic", "TRX"]
+            },
+            {
+                name: "UST (Failed)",
+                description: "Terra USD - educational case study of algorithmic stablecoin failure",
+                category: "stablecoins",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "terra",
+                website: "#",
+                logo: "⚠️",
+                featured: false,
+                tags: ["Failed", "Educational", "Terra", "Case Study"]
+            },
+            // Commodity-Backed
+            {
+                name: "PAXG",
+                description: "Paxos Gold - gold-backed digital asset token",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://paxos.com",
+                logo: "🥇",
+                featured: false,
+                tags: ["Gold-backed", "Commodity", "Physical Asset", "Paxos"]
+            },
+            {
+                name: "XAUT",
+                description: "Tether Gold - gold-backed token from Tether",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://tether.to",
+                logo: "🏆",
+                featured: false,
+                tags: ["Gold-backed", "Tether", "Commodity", "Physical Gold"]
+            },
+            // CBDCs
+            {
+                name: "Digital Yuan",
+                description: "China's central bank digital currency (CBDC)",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "china",
+                website: "#",
+                logo: "🇨🇳",
+                featured: false,
+                tags: ["CBDC", "China", "Government", "Digital Currency"]
+            },
+            {
+                name: "Sand Dollar",
+                description: "Bahamas central bank digital currency",
+                category: "stablecoins",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "bahamas",
+                website: "#",
+                logo: "🏝️",
+                featured: false,
+                tags: ["CBDC", "Bahamas", "Government", "Caribbean"]
+            },
+
+            // EXCHANGES - Centralized Tier 1
+            {
+                name: "Binance",
+                description: "World's largest cryptocurrency exchange with extensive stablecoin trading pairs",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://binance.com",
+                logo: "🟡",
+                featured: true,
+                tags: ["Largest Volume", "Global", "Multiple Stablecoins", "Spot & Futures"]
+            },
+            {
+                name: "Coinbase",
+                description: "US-based regulated exchange with beginner-friendly interface",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coinbase.com",
+                logo: "🔵",
+                featured: true,
+                tags: ["US Regulated", "Beginner Friendly", "Public Company", "USDC Native"]
+            },
+            {
+                name: "Kraken",
+                description: "Security-focused cryptocurrency exchange with institutional features",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://kraken.com",
+                logo: "🐙",
+                featured: false,
+                tags: ["Security", "Institutional", "Advanced Trading", "US-based"]
+            },
+            {
+                name: "OKX",
+                description: "Major global cryptocurrency exchange platform",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://okx.com",
+                logo: "⭕",
+                featured: false,
+                tags: ["Global", "High Volume", "Advanced Features", "Derivatives"]
+            },
+            // Regional Leaders
+            {
+                name: "KuCoin",
+                description: "Popular trading platform with comprehensive features",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://kucoin.com",
+                logo: "🔷",
+                featured: false,
+                tags: ["Popular", "Alt Coins", "KCS Token", "Global"]
+            },
+            {
+                name: "Gate.io",
+                description: "Comprehensive trading platform with advanced features",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://gate.io",
+                logo: "🚪",
+                featured: false,
+                tags: ["Comprehensive", "Advanced", "Trading Features", "Global"]
+            },
+            {
+                name: "Bitfinex",
+                description: "Professional trading platform for advanced users",
+                category: "exchanges",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://bitfinex.com",
+                logo: "💹",
+                featured: false,
+                tags: ["Professional", "Advanced Trading", "Margin", "Lending"]
+            },
+            // DEX AMM
+            {
+                name: "Uniswap",
+                description: "Leading Ethereum DEX with automated market making for stablecoins",
+                category: "exchanges",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "ethereum",
+                website: "https://uniswap.org",
+                logo: "🦄",
+                featured: true,
+                tags: ["DEX", "AMM", "Ethereum", "DeFi Leader"]
+            },
+            {
+                name: "SushiSwap",
+                description: "Multi-chain DEX platform with stablecoin liquidity pools",
+                category: "exchanges",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://sushi.com",
+                logo: "🍣",
+                featured: false,
+                tags: ["Multi-chain", "DEX", "Liquidity Mining", "Community Owned"]
+            },
+            {
+                name: "PancakeSwap",
+                description: "Leading DEX on Binance Smart Chain for stablecoin swaps",
+                category: "exchanges",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "bsc",
+                website: "https://pancakeswap.finance",
+                logo: "🥞",
+                featured: false,
+                tags: ["BSC DEX", "AMM", "Yield Farming", "CAKE Rewards"]
+            },
+            {
+                name: "Curve Finance",
+                description: "Specialized DEX for stablecoin trading with minimal slippage",
+                category: "exchanges",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://curve.fi",
+                logo: "📈",
+                featured: true,
+                tags: ["Stablecoin Focus", "Low Slippage", "Yield", "Multi-chain"]
+            },
+            // DEX Order Book
+            {
+                name: "dYdX",
+                description: "Decentralized derivatives exchange with stablecoin margin trading",
+                category: "exchanges",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://dydx.exchange",
+                logo: "📊",
+                featured: false,
+                tags: ["Derivatives", "Margin Trading", "Advanced", "Layer 2"]
+            },
+            {
+                name: "Loopring",
+                description: "zkRollup exchange protocol for efficient trading",
+                category: "exchanges",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://loopring.org",
+                logo: "⭕",
+                featured: false,
+                tags: ["zkRollup", "Layer 2", "Advanced", "Ethereum"]
+            },
+            // Cross-Chain
+            {
+                name: "THORChain",
+                description: "Cross-chain liquidity protocol for native asset swaps",
+                category: "exchanges",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://thorchain.org",
+                logo: "⚡",
+                featured: false,
+                tags: ["Cross-chain", "Native Assets", "RUNE", "Advanced"]
+            },
+            {
+                name: "Multichain",
+                description: "Cross-chain bridge protocol for asset transfers",
+                category: "exchanges",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://multichain.org",
+                logo: "🌉",
+                featured: false,
+                tags: ["Bridge", "Cross-chain", "Multi-chain", "Asset Transfer"]
+            },
+
+            // DEFI PROTOCOLS - Lending Core
+            {
+                name: "Aave",
+                description: "Leading DeFi lending protocol for earning yield on stablecoins",
+                category: "defi",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://aave.com",
+                logo: "👻",
+                featured: true,
+                tags: ["Lending", "High Yield", "Multi-chain", "Flash Loans"]
+            },
+            {
+                name: "Compound",
+                description: "Ethereum lending pioneer enabling stablecoin borrowing and lending",
+                category: "defi",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "ethereum",
+                website: "https://compound.finance",
+                logo: "🏛️",
+                featured: true,
+                tags: ["Lending Pioneer", "Governance", "COMP Token", "Ethereum"]
+            },
+            {
+                name: "MakerDAO",
+                description: "DAI issuer and CDP platform for collateralized stablecoin lending",
+                category: "defi",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://makerdao.com",
+                logo: "🔶",
+                featured: true,
+                tags: ["DAI Issuer", "CDP", "Governance", "Decentralized"]
+            },
+            // Lending Cross-Chain
+            {
+                name: "Venus Protocol",
+                description: "BSC lending protocol for stablecoin borrowing and supply",
+                category: "defi",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "bsc",
+                website: "https://venus.io",
+                logo: "🪐",
+                featured: false,
+                tags: ["BSC Lending", "XVS Token", "Money Market", "Binance Chain"]
+            },
+            {
+                name: "Benqi",
+                description: "Avalanche lending protocol for DeFi yield",
+                category: "defi",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "avalanche",
+                website: "https://benqi.fi",
+                logo: "🏔️",
+                featured: false,
+                tags: ["Avalanche", "Lending", "QI Token", "AVAX"]
+            },
+            // Yield Aggregators
+            {
+                name: "Yearn Finance",
+                description: "DeFi yield optimization protocol for automated stablecoin strategies",
+                category: "defi",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://yearn.finance",
+                logo: "🌾",
+                featured: false,
+                tags: ["Yield Farming", "Auto-compound", "Strategy Vaults", "YFI"]
+            },
+            {
+                name: "Convex Finance",
+                description: "Curve yield booster providing enhanced rewards for stablecoin LPs",
+                category: "defi",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://convexfinance.com",
+                logo: "🔺",
+                featured: false,
+                tags: ["Curve Booster", "High Yield", "LP Rewards", "CVX Token"]
+            },
+            {
+                name: "Beefy Finance",
+                description: "Multi-chain yield farming platform for stablecoin optimization",
+                category: "defi",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://beefy.finance",
+                logo: "🐄",
+                featured: false,
+                tags: ["Multi-chain", "Yield Farming", "Auto-compound", "BIFI"]
+            },
+
+            // ANALYTICS - Price Data
+            {
+                name: "CoinGecko",
+                description: "Comprehensive cryptocurrency data and stablecoin market tracking",
+                category: "analytics",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coingecko.com",
+                logo: "🦎",
+                featured: true,
+                tags: ["Price Data", "Market Cap", "Free API", "Portfolio Tracker"]
+            },
+            {
+                name: "CoinMarketCap",
+                description: "Popular cryptocurrency data site with stablecoin market information",
+                category: "analytics",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coinmarketcap.com",
+                logo: "📈",
+                featured: true,
+                tags: ["Price Data", "Market Rankings", "CMC Token", "Portfolio"]
+            },
+            // Professional Data
+            {
+                name: "Messari",
+                description: "Institutional crypto data and research platform",
+                category: "analytics",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://messari.io",
+                logo: "📊",
+                featured: false,
+                tags: ["Institutional", "Research", "Professional", "Real Vision"]
+            },
+            {
+                name: "Glassnode",
+                description: "On-chain analytics platform for advanced stablecoin metrics",
+                category: "analytics",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://glassnode.com",
+                logo: "🔍",
+                featured: false,
+                tags: ["On-chain", "Advanced Metrics", "Professional", "Market Intelligence"]
+            },
+            // DeFi Analytics
+            {
+                name: "DeFiLlama",
+                description: "DeFi TVL and protocol data with comprehensive stablecoin analytics",
+                category: "analytics",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://defillama.com",
+                logo: "🦙",
+                featured: true,
+                tags: ["TVL Tracking", "DeFi Data", "Multi-chain", "Protocol Analytics"]
+            },
+            {
+                name: "DeFiPulse",
+                description: "DeFi protocol rankings and analytics platform",
+                category: "analytics",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "ethereum",
+                website: "https://defipulse.com",
+                logo: "💓",
+                featured: false,
+                tags: ["DeFi Rankings", "Protocol Data", "Ethereum", "DeFi Stats"]
+            },
+            // On-Chain
+            {
+                name: "Etherscan",
+                description: "Ethereum blockchain explorer for stablecoin transaction tracking",
+                category: "analytics",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "ethereum",
+                website: "https://etherscan.io",
+                logo: "🔎",
+                featured: false,
+                tags: ["Block Explorer", "Transaction Tracking", "Ethereum", "Token Analytics"]
+            },
+            {
+                name: "Dune Analytics",
+                description: "Custom blockchain analytics with user-generated stablecoin dashboards",
+                category: "analytics",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://dune.com",
+                logo: "🏜️",
+                featured: false,
+                tags: ["Custom Analytics", "Community", "SQL Queries", "Dashboards"]
+            },
+            // Portfolio
+            {
+                name: "Zapper",
+                description: "DeFi portfolio tracker for stablecoin positions and yield",
+                category: "analytics",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://zapper.fi",
+                logo: "⚡",
+                featured: false,
+                tags: ["Portfolio Tracker", "DeFi Positions", "Yield Tracking", "Multi-chain"]
+            },
+            {
+                name: "DeBank",
+                description: "Multi-chain portfolio tracker for DeFi and stablecoin holdings",
+                category: "analytics",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://debank.com",
+                logo: "🏦",
+                featured: false,
+                tags: ["Portfolio", "Multi-chain", "DeFi", "Holdings Tracker"]
+            },
+            // Risk Tools
+            {
+                name: "DeFiSafety",
+                description: "Protocol safety ratings for DeFi and stablecoin platforms",
+                category: "analytics",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://defisafety.com",
+                logo: "🛡️",
+                featured: false,
+                tags: ["Safety Ratings", "Risk Assessment", "DeFi", "Security"]
+            },
+            {
+                name: "CertiK",
+                description: "Security audit platform for stablecoin smart contracts",
+                category: "analytics",
+                pricing: "paid",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://certik.org",
+                logo: "🔒",
+                featured: false,
+                tags: ["Security Audits", "Smart Contracts", "Professional", "CTK"]
+            },
+
+            // INFRASTRUCTURE - APIs Core
+            {
+                name: "Chainlink",
+                description: "Decentralized oracle network providing price feeds for stablecoins",
+                category: "infrastructure",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://chain.link",
+                logo: "🔗",
+                featured: true,
+                tags: ["Oracle Network", "Price Feeds", "Decentralized", "LINK"]
+            },
+            {
+                name: "CoinGecko API",
+                description: "Free cryptocurrency data API for developers",
+                category: "infrastructure",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://coingecko.com/api",
+                logo: "🔌",
+                featured: false,
+                tags: ["Free API", "Price Data", "Developer", "Crypto Data"]
+            },
+            {
+                name: "Alchemy",
+                description: "Blockchain developer platform with stablecoin APIs and tools",
+                category: "infrastructure",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://alchemy.com",
+                logo: "🧪",
+                featured: false,
+                tags: ["Developer Platform", "APIs", "Web3", "Infrastructure"]
+            },
+            {
+                name: "Infura",
+                description: "Ethereum API provider for stablecoin applications",
+                category: "infrastructure",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://infura.io",
+                logo: "🌐",
+                featured: false,
+                tags: ["Ethereum API", "Infrastructure", "ConsenSys", "Web3"]
+            },
+            // Development
+            {
+                name: "Hardhat",
+                description: "Ethereum development framework for smart contracts",
+                category: "infrastructure",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://hardhat.org",
+                logo: "⚒️",
+                featured: false,
+                tags: ["Development", "Smart Contracts", "Ethereum", "Framework"]
+            },
+            {
+                name: "Remix",
+                description: "Browser-based Solidity IDE for smart contract development",
+                category: "infrastructure",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "ethereum",
+                website: "https://remix.ethereum.org",
+                logo: "💻",
+                featured: false,
+                tags: ["IDE", "Solidity", "Browser-based", "Development"]
+            },
+            // Cross-Chain
+            {
+                name: "LayerZero",
+                description: "Omnichain interoperability protocol for cross-chain stablecoin transfers",
+                category: "infrastructure",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://layerzero.network",
+                logo: "🌉",
+                featured: false,
+                tags: ["Cross-chain", "Interoperability", "Omnichain", "Bridge"]
+            },
+            {
+                name: "Axelar",
+                description: "Cross-chain communication protocol for Web3",
+                category: "infrastructure",
+                pricing: "free",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://axelar.network",
+                logo: "🔄",
+                featured: false,
+                tags: ["Cross-chain", "Communication", "Web3", "Interoperability"]
+            },
+
+            // PAYMENTS - Processors
+            {
+                name: "Circle",
+                description: "USDC issuer and payment platform for business stablecoin solutions",
+                category: "payments",
+                pricing: "freemium",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://circle.com",
+                logo: "⭕",
+                featured: true,
+                tags: ["USDC Native", "Enterprise", "API", "Regulated"]
+            },
+            {
+                name: "Stripe",
+                description: "Payment processor with cryptocurrency and stablecoin support",
+                category: "payments",
+                pricing: "freemium",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://stripe.com",
+                logo: "💳",
+                featured: true,
+                tags: ["Payment Processing", "Business", "API", "Global"]
+            },
+            {
+                name: "BitPay",
+                description: "Bitcoin and cryptocurrency payment processor with stablecoin support",
+                category: "payments",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://bitpay.com",
+                logo: "💰",
+                featured: false,
+                tags: ["Crypto Payments", "Merchant Services", "Invoicing", "BitPay Card"]
+            },
+            {
+                name: "Coinbase Commerce",
+                description: "Merchant payment solution for accepting stablecoin payments",
+                category: "payments",
+                pricing: "free",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://commerce.coinbase.com",
+                logo: "🏪",
+                featured: false,
+                tags: ["Merchant Payments", "E-commerce", "No Fees", "Coinbase"]
+            },
+            // Gateways
+            {
+                name: "Moonpay",
+                description: "Fiat-to-crypto gateway supporting major stablecoins",
+                category: "payments",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://moonpay.com",
+                logo: "🌙",
+                featured: false,
+                tags: ["Fiat Gateway", "Easy Onramp", "Credit Card", "Global"]
+            },
+            {
+                name: "Ramp Network",
+                description: "Fiat onramp solution for stablecoin purchases",
+                category: "payments",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://ramp.network",
+                logo: "🚀",
+                featured: false,
+                tags: ["Fiat Onramp", "Bank Transfers", "API", "Embedded"]
+            },
+            // E-commerce
+            {
+                name: "WooCommerce Crypto",
+                description: "WordPress cryptocurrency payment plugin for e-commerce",
+                category: "payments",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://wordpress.org",
+                logo: "🛒",
+                featured: false,
+                tags: ["WordPress", "E-commerce", "Plugin", "WooCommerce"]
+            },
+            {
+                name: "Shopify Crypto Apps",
+                description: "Shopify cryptocurrency payment applications",
+                category: "payments",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://shopify.com",
+                logo: "🛍️",
+                featured: false,
+                tags: ["Shopify", "E-commerce", "Apps", "Online Store"]
+            },
+            // Banking
+            {
+                name: "Revolut",
+                description: "Neobank with cryptocurrency and stablecoin features",
+                category: "payments",
+                pricing: "freemium",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://revolut.com",
+                logo: "🏦",
+                featured: false,
+                tags: ["Neobank", "Crypto Features", "Banking", "Mobile"]
+            },
+            {
+                name: "Coinbase Card",
+                description: "Cryptocurrency debit card for spending stablecoins",
+                category: "payments",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coinbase.com",
+                logo: "💳",
+                featured: false,
+                tags: ["Debit Card", "Crypto Spending", "Rewards", "Coinbase"]
+            },
+
+            // COMPLIANCE - KYC/AML
+            {
+                name: "Chainalysis",
+                description: "Blockchain compliance platform for stablecoin transaction monitoring",
+                category: "compliance",
+                pricing: "paid",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://chainalysis.com",
+                logo: "🕵️",
+                featured: true,
+                tags: ["AML/KYC", "Compliance", "Enterprise", "Investigation"]
+            },
+            {
+                name: "Elliptic",
+                description: "Crypto compliance and investigation platform",
+                category: "compliance",
+                pricing: "paid",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://elliptic.co",
+                logo: "🔍",
+                featured: false,
+                tags: ["Compliance", "Investigation", "AML", "Professional"]
+            },
+            // Regulatory
+            {
+                name: "SEC Guidance",
+                description: "US securities regulation guidance for stablecoins",
+                category: "compliance",
+                pricing: "free",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://sec.gov",
+                logo: "🏛️",
+                featured: false,
+                tags: ["US Regulation", "SEC", "Legal", "Guidance"]
+            },
+            {
+                name: "MiCA Framework",
+                description: "EU cryptocurrency regulation framework",
+                category: "compliance",
+                pricing: "free",
+                level: "professional",
+                blockchain: "multichain",
+                website: "#",
+                logo: "🇪🇺",
+                featured: false,
+                tags: ["EU Regulation", "MiCA", "Framework", "Legal"]
+            },
+            // Auditing
+            {
+                name: "Grant Thornton",
+                description: "USDC reserve auditor and financial services",
+                category: "compliance",
+                pricing: "paid",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://grantthornton.com",
+                logo: "📋",
+                featured: false,
+                tags: ["Auditing", "USDC", "Financial Services", "Professional"]
+            },
+            // Legal
+            {
+                name: "Coin Center",
+                description: "Cryptocurrency policy advocacy organization",
+                category: "compliance",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coincenter.org",
+                logo: "⚖️",
+                featured: false,
+                tags: ["Policy", "Advocacy", "Legal", "Non-profit"]
+            },
+
+            // EDUCATION - Beginner
+            {
+                name: "Coinbase Earn",
+                description: "Learn about stablecoins and earn crypto rewards",
+                category: "education",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coinbase.com/earn",
+                logo: "🎓",
+                featured: true,
+                tags: ["Learn to Earn", "Beginner", "Free", "Interactive"]
+            },
+            {
+                name: "Binance Academy",
+                description: "Comprehensive stablecoin and cryptocurrency education platform",
+                category: "education",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://academy.binance.com",
+                logo: "📚",
+                featured: true,
+                tags: ["Free Education", "Comprehensive", "Multi-language", "Beginner Friendly"]
+            },
+            // Advanced
+            {
+                name: "ConsenSys Academy",
+                description: "Professional blockchain education and certification",
+                category: "education",
+                pricing: "paid",
+                level: "professional",
+                blockchain: "ethereum",
+                website: "https://consensys.net/academy",
+                logo: "🏫",
+                featured: false,
+                tags: ["Professional", "Certification", "Blockchain", "ConsenSys"]
+            },
+            // Content
+            {
+                name: "Bankless",
+                description: "DeFi and cryptocurrency media covering stablecoin strategies",
+                category: "education",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://bankless.com",
+                logo: "🏴",
+                featured: false,
+                tags: ["DeFi Education", "Strategies", "Community", "Advanced"]
+            },
+            {
+                name: "Coin Bureau",
+                description: "Educational cryptocurrency content and analysis",
+                category: "education",
+                pricing: "free",
+                level: "beginner",
+                blockchain: "multichain",
+                website: "https://coinbureau.com",
+                logo: "🎯",
+                featured: false,
+                tags: ["Educational", "Analysis", "YouTube", "Beginner Friendly"]
+            },
+            // Research
+            {
+                name: "Messari Research",
+                description: "Institutional cryptocurrency research and analysis",
+                category: "education",
+                pricing: "freemium",
+                level: "professional",
+                blockchain: "multichain",
+                website: "https://messari.io",
+                logo: "📊",
+                featured: false,
+                tags: ["Research", "Institutional", "Analysis", "Professional"]
+            },
+            // News
+            {
+                name: "CoinDesk",
+                description: "Leading cryptocurrency news source covering stablecoin developments",
+                category: "education",
+                pricing: "freemium",
+                level: "intermediate",
+                blockchain: "multichain",
+                website: "https://coindesk.com",
+                logo: "📰",
+                featured: false,
+                tags: ["News", "Industry Updates", "Analysis", "Professional"]
+            },
+            {
+                name: "The Block",
+                description: "Professional cryptocurrency news and research platform",
+                category: "education",
+                pricing: "freemium",
+                level: "advanced",
+                blockchain: "multichain",
+                website: "https://theblock.co",
+                logo: "⬛",
+                featured: false,
+                tags: ["Professional News", "Research", "Industry Analysis", "Data"]
+            }
+        ];
+
+        let filteredTools = [...tools];
+        let currentSection = 'home';
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCategories();
+            renderTrendingTools();
+            renderToolsGrid();
+        });
+
+        // Navigation functions
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.section-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            
+            // Show selected section
+            document.getElementById(section + '-section').classList.remove('hidden');
+            
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-gray-900');
+                link.classList.add('text-gray-500');
+            });
+            
+            // Highlight current section in nav
+            const currentLink = document.querySelector(`[onclick="showSection('${section}')"]`);
+            if (currentLink && currentLink.classList.contains('nav-link')) {
+                currentLink.classList.remove('text-gray-500');
+                currentLink.classList.add('text-gray-900');
+            }
+            
+            currentSection = section;
+            
+            // Close mobile menu
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // Render functions
+        function renderCategories() {
+            const grid = document.getElementById('categories-grid');
+            grid.innerHTML = categories.map(category => `
+                <div class="card-hover bg-white rounded-xl p-4 sm:p-6 shadow-sm border cursor-pointer" onclick="filterByCategory('${category.id}')">
+                    <div class="flex items-center mb-4">
+                        <div class="${category.color} text-white p-2 sm:p-3 rounded-lg mr-3 sm:mr-4">
+                            <i class="${category.icon} text-lg sm:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-base sm:text-lg">${category.name}</h3>
+                            <p class="text-gray-500 text-xs sm:text-sm">${category.count} tools</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm">${category.description}</p>
+                </div>
+            `).join('');
+        }
+
+        function renderTrendingTools() {
+            const container = document.getElementById('trending-tools');
+            // Show 12 tools for trending section - mix of featured and others
+            const featuredTools = tools.filter(tool => tool.featured);
+            const otherTools = tools.filter(tool => !tool.featured);
+            const trendingTools = [...featuredTools, ...otherTools].slice(0, 12);
+            
+            container.innerHTML = trendingTools.map(tool => createToolCard(tool)).join('');
+        }
+
+        function renderToolsGrid() {
+            const container = document.getElementById('tools-grid');
+            const noResults = document.getElementById('no-results');
+            
+            if (filteredTools.length === 0) {
+                container.innerHTML = '';
+                noResults?.classList.remove('hidden');
+                return;
+            }
+            
+            noResults?.classList.add('hidden');
+            container.innerHTML = filteredTools.map(tool => createToolCard(tool)).join('');
+        }
+
+        function createToolCard(tool) {
+            return `
+                <div class="tool-card rounded-xl p-4 sm:p-6 shadow-sm border card-hover cursor-pointer" onclick="openToolModal('${tool.name}')">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="text-xl sm:text-2xl mr-2 sm:mr-3">${tool.logo}</div>
+                            <div>
+                                <h3 class="font-semibold text-base sm:text-lg">${tool.name}</h3>
+                                <span class="category-badge text-white text-xs px-2 py-1 rounded-full">${tool.category}</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs text-gray-500 uppercase">${tool.pricing}</div>
+                            <div class="text-xs text-gray-500">${tool.level}</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-sm mb-4 line-clamp-2">${tool.description}</p>
+                    <div class="flex flex-wrap gap-1 mb-4">
+                        ${tool.tags.map(tag => `<span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">${tag}</span>`).join('')}
+                    </div>
+                    <button class="w-full bg-indigo-50 text-indigo-600 py-2 rounded-lg hover:bg-indigo-100 transition text-xs sm:text-sm font-medium">
+                        View Details
+                    </button>
+                </div>
+            `;
+        }
+
+        // Filter functions
+        function filterByCategory(categoryId) {
+            const categoryFilter = document.getElementById('category-filter');
+            if (categoryFilter) {
+                categoryFilter.value = categoryId;
+            }
+            showSection('categories');
+            filterTools();
+        }
+
+        function filterTools() {
+            const categoryFilter = document.getElementById('category-filter')?.value || '';
+            const pricingFilter = document.getElementById('pricing-filter')?.value || '';
+            const levelFilter = document.getElementById('level-filter')?.value || '';
+            const blockchainFilter = document.getElementById('blockchain-filter')?.value || '';
+            const sortFilter = document.getElementById('sort-filter')?.value || 'popularity';
+
+            filteredTools = tools.filter(tool => {
+                return (!categoryFilter || tool.category === categoryFilter) &&
+                       (!pricingFilter || tool.pricing === pricingFilter) &&
+                       (!levelFilter || tool.level === levelFilter) &&
+                       (!blockchainFilter || tool.blockchain === blockchainFilter);
+            });
+
+            // Sort tools
+            if (sortFilter === 'name') {
+                filteredTools.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortFilter === 'newest') {
+                filteredTools.sort((a, b) => b.featured - a.featured);
+            }
+
+            renderToolsGrid();
+        }
+
+        // Modal functions
+        function openToolModal(toolName) {
+            const tool = tools.find(t => t.name === toolName);
+            if (!tool) return;
+
+            const modal = document.getElementById('tool-modal');
+            const content = document.getElementById('modal-content');
+            
+            content.innerHTML = `
+                <div class="p-4 sm:p-6">
+                    <div class="flex justify-between items-start mb-4 sm:mb-6">
+                        <div class="flex items-center">
+                            <div class="text-3xl sm:text-4xl mr-3 sm:mr-4">${tool.logo}</div>
+                            <div>
+                                <h2 class="text-xl sm:text-2xl font-bold">${tool.name}</h2>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <span class="category-badge text-white text-xs px-2 py-1 rounded-full">${tool.category}</span>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">${tool.pricing}</span>
+                                    <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">${tool.level}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="closeModal()" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-lg sm:text-xl"></i>
+                        </button>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base">${tool.description}</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+                        <div>
+                            <h4 class="font-semibold mb-2 text-sm sm:text-base">Key Features</h4>
+                            <ul class="space-y-1 text-xs sm:text-sm text-gray-600">
+                                ${tool.tags.map(tag => `<li>• ${tag}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2 text-sm sm:text-base">Details</h4>
+                            <div class="space-y-2 text-xs sm:text-sm">
+                                <div><span class="font-medium">Pricing:</span> ${tool.pricing}</div>
+                                <div><span class="font-medium">Target Users:</span> ${tool.level}</div>
+                                <div><span class="font-medium">Blockchain:</span> ${tool.blockchain}</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                        <a href="${tool.website}" target="_blank" class="w-full bg-indigo-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg hover:bg-indigo-700 transition text-center font-semibold text-sm sm:text-base">
+                            <i class="fas fa-external-link-alt mr-2"></i>Visit Website
+                        </a>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('tool-modal').classList.add('hidden');
+        }
+
+        // Simple function to open Google Form
+        function openGoogleForm() {
+            // Open your Google Form in a new tab
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLSdjGRc9uOHNHPMXdX2pPi0aWfAShl4Wi2Fxt7jYpFOmElxWew/viewform?usp=preview', '_blank');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('tool-modal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileButton = document.querySelector('[onclick="toggleMobileMenu()"]');
+            
+            if (!mobileMenu.contains(e.target) && !mobileButton.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
