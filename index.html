@@ -55,6 +55,9 @@
                         <div class="flex items-baseline space-x-4">
                             <a href="#" onclick="showSection('home')" class="nav-link text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
                             <a href="#" onclick="showSection('categories')" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Browse</a>
+                            <a href="https://blog.stablecoinhub.pro" target="_blank" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">
+                                Blog <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                            </a>
                             <a href="#" onclick="showSection('submit')" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Submit Tool</a>
                             <a href="#" onclick="showSection('about')" class="nav-link text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
                         </div>
@@ -72,6 +75,9 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#" onclick="showSection('home')" class="block px-3 py-2 text-gray-900 hover:text-indigo-600">Home</a>
                 <a href="#" onclick="showSection('categories')" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">Browse</a>
+                <a href="https://blog.stablecoinhub.pro" target="_blank" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">
+                    Blog <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                </a>
                 <a href="#" onclick="showSection('submit')" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">Submit Tool</a>
                 <a href="#" onclick="showSection('about')" class="block px-3 py-2 text-gray-500 hover:text-indigo-600">About</a>
             </div>
@@ -91,7 +97,15 @@
                     Find everything you need for the stablecoin ecosystem in one place.
                 </p>
                 
-
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 fade-in">
+                    <button onclick="showSection('categories')" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                        Browse 95+ Tools
+                    </button>
+                    <a href="https://blog.stablecoinhub.pro" target="_blank" class="bg-indigo-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-indigo-600 transition">
+                        Read Latest Articles
+                    </a>
+                </div>
 
                 <!-- Stats -->
                 <div class="stats-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto fade-in px-4">
@@ -111,6 +125,61 @@
                         <div class="text-xl sm:text-2xl font-bold text-white">Updated</div>
                         <div class="text-sm sm:text-base text-white/80">Daily</div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Articles Section -->
+        <div class="py-12 sm:py-16 bg-indigo-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-8 sm:mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Latest Stablecoin Insights</h2>
+                    <p class="text-base sm:text-lg text-gray-600 px-4">Expert guides and analysis from our research team</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="featured-articles">
+                    <!-- Sample featured articles - will be replaced with real ones -->
+                    <article class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-blue-600 text-xs px-2 py-1 rounded-full">Guide</span>
+                            <span class="text-gray-500 text-sm ml-2">5 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">USDC vs USDT: Which Stablecoin is Better for Beginners in 2025?</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">A comprehensive comparison of the two largest stablecoins, covering safety, regulations, and use cases for new users.</p>
+                        <a href="https://blog.stablecoinhub.pro" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                            Read Article <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-600 text-xs px-2 py-1 rounded-full">DeFi</span>
+                            <span class="text-gray-500 text-sm ml-2">7 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">How to Earn 8%+ Yield on Stablecoins Safely in 2025</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Discover the best platforms and strategies for earning passive income on your stablecoin holdings with minimal risk.</p>
+                        <a href="https://blog.stablecoinhub.pro" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                            Read Article <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </article>
+
+                    <article class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-600 text-xs px-2 py-1 rounded-full">Analysis</span>
+                            <span class="text-gray-500 text-sm ml-2">4 min read</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">Stablecoin Regulations: What's Coming in 2025</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">Breaking down the latest regulatory developments and what they mean for stablecoin users and businesses.</p>
+                        <a href="https://blog.stablecoinhub.pro" target="_blank" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                            Read Article <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="text-center">
+                    <a href="https://blog.stablecoinhub.pro" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+                        View All Articles
+                    </a>
                 </div>
             </div>
         </div>
@@ -371,9 +440,41 @@
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-8 sm:py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h3 class="text-lg sm:text-xl font-bold mb-4">StableCoin Hub</h3>
-                <p class="text-gray-400 text-sm sm:text-base mb-6">The ultimate directory for stablecoin tools and platforms.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">StableCoin Hub</h3>
+                    <p class="text-gray-400 text-sm sm:text-base mb-4">The ultimate directory for stablecoin tools and platforms.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://blog.stablecoinhub.pro" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fas fa-blog"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm sm:text-base">
+                        <li><a href="#" onclick="showSection('categories')" class="text-gray-400 hover:text-white transition">Browse Tools</a></li>
+                        <li><a href="#" onclick="showSection('submit')" class="text-gray-400 hover:text-white transition">Submit Tool</a></li>
+                        <li><a href="https://blog.stablecoinhub.pro" target="_blank" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="#" onclick="showSection('about')" class="text-gray-400 hover:text-white transition">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Latest Articles</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://blog.stablecoinhub.pro" target="_blank" class="text-gray-400 hover:text-white transition">USDC vs USDT Guide</a></li>
+                        <li><a href="https://blog.stablecoinhub.pro" target="_blank" class="text-gray-400 hover:text-white transition">Stablecoin Yield Strategies</a></li>
+                        <li><a href="https://blog.stablecoinhub.pro" target="_blank" class="text-gray-400 hover:text-white transition">2025 Regulation Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
                 <p class="text-gray-400 text-sm sm:text-base">&copy; 2025 StableCoin Hub. All rights reserved.</p>
             </div>
         </div>
