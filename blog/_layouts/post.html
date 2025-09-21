@@ -1,0 +1,130 @@
+---
+layout: default
+---
+
+<!-- Article Header -->
+<article class="bg-white rounded-xl shadow-sm border p-6 sm:p-8 mb-8">
+    <!-- Breadcrumb -->
+    <nav class="mb-6">
+        <ol class="flex items-center space-x-2 text-sm text-gray-500">
+            <li><a href="/" class="hover:text-indigo-600">Home</a></li>
+            <li><i class="fas fa-chevron-right text-xs"></i></li>
+            <li><a href="/{{ page.categories[0] | downcase }}" class="hover:text-indigo-600 capitalize">{{ page.categories[0] }}</a></li>
+            <li><i class="fas fa-chevron-right text-xs"></i></li>
+            <li class="text-gray-900">{{ page.title }}</li>
+        </ol>
+    </nav>
+
+    <!-- Article Meta -->
+    <div class="flex flex-wrap items-center gap-4 mb-6">
+        {% for category in page.categories %}
+        <span class="bg-indigo-100 text-indigo-600 text-xs px-3 py-1 rounded-full font-medium">{{ category }}</span>
+        {% endfor %}
+        <span class="text-gray-500 text-sm">
+            <i class="fas fa-calendar mr-1"></i>
+            {{ page.date | date: "%B %d, %Y" }}
+        </span>
+        <span class="text-gray-500 text-sm">
+            <i class="fas fa-clock mr-1"></i>
+            {% assign words = content | number_of_words %}
+            {% assign minutes = words | divided_by: 200 %}
+            {% if minutes < 1 %}1{% else %}{{ minutes }}{% endif %} min read
+        </span>
+    </div>
+
+    <!-- Article Title -->
+    <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{{ page.title }}</h1>
+    
+    <!-- Article Description -->
+    {% if page.description %}
+    <p class="text-lg text-gray-600 mb-8 leading-relaxed">{{ page.description }}</p>
+    {% endif %}
+</article>
+
+<!-- Article Content with Prose Styling -->
+<article class="bg-white rounded-xl shadow-sm border p-6 sm:p-8 mb-8">
+    <div class="prose">
+        {{ content }}
+    </div>
+</article>
+
+<!-- Article Tags -->
+{% if page.tags %}
+<div class="bg-white rounded-xl shadow-sm border p-6 mb-8">
+    <h3 class="text-lg font-semibold mb-4">Tags</h3>
+    <div class="flex flex-wrap gap-2">
+        {% for tag in page.tags %}
+        <span class="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full hover:bg-gray-200 transition">
+            {{ tag }}
+        </span>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- Share & Navigation -->
+<div class="bg-white rounded-xl shadow-sm border p-6 mb-8">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <!-- Share Buttons -->
+        <div>
+            <h3 class="text-lg font-semibold mb-3">Share this article</h3>
+            <div class="flex gap-3">
+                <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}" 
+                   target="_blank" 
+                   class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition text-sm">
+                    <i class="fab fa-twitter mr-1"></i> Twitter
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" 
+                   target="_blank" 
+                   class="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition text-sm">
+                    <i class="fab fa-linkedin mr-1"></i> LinkedIn
+                </a>
+                <button onclick="copyToClipboard()" 
+                        class="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition text-sm">
+                    <i class="fas fa-link mr-1"></i> Copy Link
+                </button>
+            </div>
+        </div>
+        
+        <!-- Back to Directory -->
+        <a href="https://stablecoinhub.pro" 
+           class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition font-semibold text-sm inline-flex items-center">
+            <i class="fas fa-external-link-alt mr-2"></i>
+            Explore Tools Directory
+        </a>
+    </div>
+</div>
+
+<!-- Related Articles -->
+<div class="bg-white rounded-xl shadow-sm border p-6">
+    <h3 class="text-lg font-semibold mb-4">Related Articles</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {% assign related_posts = site.posts | where_exp: "post", "post.categories[0] == page.categories[0]" | limit: 4 %}
+        {% for post in related_posts %}
+        {% if post.url != page.url %}
+        <a href="{{ post.url }}" class="block p-4 border rounded-lg hover:bg-gray-50 transition">
+            <div class="flex items-center mb-2">
+                {% for category in post.categories limit:1 %}
+                <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full mr-2">{{ category }}</span>
+                {% endfor %}
+                <span class="text-gray-500 text-xs">
+                    {{ post.date | date: "%b %d" }}
+                </span>
+            </div>
+            <h4 class="font-semibold text-gray-900 mb-2 line-clamp-2">{{ post.title }}</h4>
+            {% if post.description %}
+            <p class="text-gray-600 text-sm line-clamp-2">{{ post.description }}</p>
+            {% endif %}
+        </a>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+function copyToClipboard() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+        alert('Link copied to clipboard!');
+    });
+}
+</script>
