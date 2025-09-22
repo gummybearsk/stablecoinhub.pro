@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Tool - StableCoin Hub</title>
+    <meta name="description" content="Submit your stablecoin tool or platform to be featured on StableCoin Hub directory.">
+    <link rel="canonical" href="https://www.stablecoinhub.pro/submit/">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GX6EB7DSFL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GX6EB7DSFL');
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="/" class="text-xl sm:text-2xl font-bold text-indigo-600">StableCoin Hub</a>
+                    </div>
+                    <div class="hidden md:block ml-6 lg:ml-10">
+                        <div class="flex items-baseline space-x-4">
+                            <a href="/" class="text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                            <a href="/blog/" class="text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+                            <a href="/submit/" class="text-gray-900 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">Submit Tool</a>
+                            <a href="/about/" class="text-gray-500 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Submit Form -->
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="bg-white rounded-xl shadow-sm p-8">
+            <h1 class="text-3xl font-bold text-gray-900 mb-6">Submit Your Tool</h1>
+
+            <p class="text-gray-600 mb-8">
+                Get your stablecoin tool or platform featured on StableCoin Hub. Fill out the form below and we'll review your submission within 48 hours.
+            </p>
+
+            <form id="submitForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tool Name *</label>
+                        <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="e.g., StablePay">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Website URL *</label>
+                        <input type="url" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="https://example.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Category *</label>
+                    <select required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        <option value="">Select a category</option>
+                        <option value="exchange">Exchange</option>
+                        <option value="defi">DeFi Protocol</option>
+                        <option value="wallet">Wallet</option>
+                        <option value="payment">Payment Solution</option>
+                        <option value="analytics">Analytics</option>
+                        <option value="education">Education</option>
+                        <option value="infrastructure">Infrastructure</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Short Description *</label>
+                    <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="One-line description (max 100 characters)" maxlength="100">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Detailed Description *</label>
+                    <textarea required rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Tell us about your tool, its features, and benefits..."></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Supported Stablecoins</label>
+                    <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="e.g., USDC, USDT, DAI">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Your Name *</label>
+                        <input type="text" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="John Doe">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Your Email *</label>
+                        <input type="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="john@example.com">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Additional Information</label>
+                    <textarea rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Any additional details, special features, or promotional offers..."></textarea>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <p class="text-sm text-blue-800">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        <strong>Review Process:</strong> We review all submissions within 48 hours. You'll receive an email once your tool is approved and listed.
+                    </p>
+                </div>
+
+                <div>
+                    <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg hover:bg-indigo-700 transition font-semibold">
+                        <i class="fas fa-paper-plane mr-2"></i>Submit for Review
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Benefits Section -->
+        <div class="mt-8 bg-white rounded-xl shadow-sm p-8">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">Why List on StableCoin Hub?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start">
+                    <i class="fas fa-users text-indigo-600 mt-1 mr-3"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Reach Your Audience</h3>
+                        <p class="text-gray-600 text-sm">Connect with users actively searching for stablecoin solutions</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-chart-line text-indigo-600 mt-1 mr-3"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Increase Visibility</h3>
+                        <p class="text-gray-600 text-sm">Get featured in our curated directory and blog posts</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-star text-indigo-600 mt-1 mr-3"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Build Credibility</h3>
+                        <p class="text-gray-600 text-sm">Join trusted platforms in the stablecoin ecosystem</p>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <i class="fas fa-bolt text-indigo-600 mt-1 mr-3"></i>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Free Listing</h3>
+                        <p class="text-gray-600 text-sm">No cost to submit and get listed in our directory</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t mt-12">
+        <div class="max-w-7xl mx-auto px-4 py-8">
+            <div class="text-center text-gray-500">
+                <p>&copy; 2025 StableCoin Hub. All rights reserved.</p>
+                <div class="mt-4 space-x-4">
+                    <a href="/" class="hover:text-indigo-600">Home</a>
+                    <a href="/blog/" class="hover:text-indigo-600">Blog</a>
+                    <a href="/about/" class="hover:text-indigo-600">About</a>
+                    <a href="/submit/" class="hover:text-indigo-600">Submit Tool</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('submitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your submission! We will review it within 48 hours.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
