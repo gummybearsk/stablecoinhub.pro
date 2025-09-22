@@ -1048,55 +1048,43 @@
         </div>
     </div>
 
-    <!-- Newsletter CTA -->
-    <div class="bg-gradient-to-r from-indigo-600 to-purple-600 py-16">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-            <p class="text-xl text-white/90 mb-8">Get the latest stablecoin insights delivered to your inbox</p>
-            <div class="flex max-w-md mx-auto gap-4">
-                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg">
-                <button class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100">
-                    Subscribe
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 py-12">
+    <footer class="bg-gray-900 text-white py-8 sm:py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">StableCoin Hub</h3>
-                    <p class="text-gray-400">Your trusted source for stablecoin insights and analysis.</p>
+                    <h3 class="text-lg sm:text-xl font-bold mb-4">StableCoin Hub</h3>
+                    <p class="text-gray-400 text-sm sm:text-base mb-4">The ultimate directory for stablecoin tools and platforms.</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-3">Resources</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://www.stablecoinhub.pro/blog/" class="hover:text-white">Blog</a></li>
-                        <li><a href="https://www.stablecoinhub.pro/tools/" class="hover:text-white">Tools</a></li>
-                        <li><a href="https://www.stablecoinhub.pro/data/" class="hover:text-white">Data</a></li>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm sm:text-base">
+                        <li><a href="/" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="/blog/" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                        <li><a href="/tools/" class="text-gray-400 hover:text-white transition">Tools</a></li>
+                        <li><a href="/about/" class="text-gray-400 hover:text-white transition">About</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-3">Company</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://www.stablecoinhub.pro/about/" class="hover:text-white">About</a></li>
-                        <li><a href="https://www.stablecoinhub.pro/contact/" class="hover:text-white">Contact</a></li>
-                        <li><a href="https://www.stablecoinhub.pro/privacy/" class="hover:text-white">Privacy</a></li>
+                    <h4 class="text-lg font-semibold mb-4">Latest Articles</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/blog/usdc-vs-usdt-complete-guide/" class="text-gray-400 hover:text-white transition">USDC vs USDT Guide</a></li>
+                        <li><a href="/blog/defi-stablecoin-yields/" class="text-gray-400 hover:text-white transition">Stablecoin Yield Strategies</a></li>
+                        <li><a href="/blog/stablecoin-regulation/" class="text-gray-400 hover:text-white transition">2025 Regulation Updates</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-3">Follow Us</h4>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
-                    </div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm sm:text-base">
+                        <li><a href="/privacy.html" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="text-gray-400 hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="/disclaimer.html" class="text-gray-400 hover:text-white transition">Disclaimer</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 StableCoin Hub. All rights reserved.</p>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm sm:text-base">&copy; 2025 StableCoin Hub. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1129,10 +1117,43 @@
         });
     }
 
+    let currentlyShowing = 9; // Initial number of articles shown
+    const articlesPerPage = 9;
+
     function loadMore() {
-        // This would load more posts in a real implementation
-        alert('Loading more articles...');
+        const allArticles = document.querySelectorAll('#blog-grid article');
+        const totalArticles = allArticles.length;
+
+        // Show the next batch of articles
+        for (let i = currentlyShowing; i < Math.min(currentlyShowing + articlesPerPage, totalArticles); i++) {
+            if (allArticles[i]) {
+                allArticles[i].style.display = 'block';
+            }
+        }
+
+        currentlyShowing += articlesPerPage;
+
+        // Hide button if all articles are shown
+        if (currentlyShowing >= totalArticles) {
+            document.querySelector('button[onclick="loadMore()"]').style.display = 'none';
+        }
     }
+
+    // Initially hide articles beyond the first page
+    window.addEventListener('DOMContentLoaded', () => {
+        const allArticles = document.querySelectorAll('#blog-grid article');
+        allArticles.forEach((article, index) => {
+            if (index >= currentlyShowing) {
+                article.style.display = 'none';
+            }
+        });
+
+        // Hide Load More button if not enough articles
+        if (allArticles.length <= currentlyShowing) {
+            const loadMoreBtn = document.querySelector('button[onclick="loadMore()"]');
+            if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+        }
+    });
     </script>
 </body>
 </html>
