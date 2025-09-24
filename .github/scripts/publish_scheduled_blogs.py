@@ -5,8 +5,6 @@ This script runs daily via GitHub Actions and publishes blogs for the current da
 """
 
 import os
-import json
-import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -90,6 +88,39 @@ BLOG_SCHEDULE = {
             "title": "Do Stablecoins Go Up in Value? Understanding Types, Risks, and Why People Invest",
             "category": "Education",
             "description": "Explore whether stablecoins can increase in value, their investment potential, and earning strategies."
+        }
+    ],
+    # October 2025
+    "2025-10-01": [
+        {
+            "url": "usdc-apy",
+            "title": "USDC APY: How to Earn Interest on USD Coin Safely",
+            "category": "Yield",
+            "description": "Comprehensive guide to earning competitive APY on USDC through lending platforms, DeFi protocols, and staking opportunities."
+        }
+    ],
+    "2025-10-02": [
+        {
+            "url": "older-us-coins",
+            "title": "Older US Coins: How to Identify, Collect, and Sell Valuable Pieces",
+            "category": "Collecting",
+            "description": "Expert guide to identifying valuable older US coins, understanding grading, and maximizing value when buying or selling."
+        }
+    ],
+    "2025-10-03": [
+        {
+            "url": "what-will-be-the-next-bitcoin",
+            "title": "What Will Be the Next Bitcoin? Coins Poised to Take Off",
+            "category": "Investment",
+            "description": "Analysis of cryptocurrencies with potential for significant growth, examining technology, adoption, and market dynamics."
+        }
+    ],
+    "2025-10-04": [
+        {
+            "url": "bitcoin-candle-charts",
+            "title": "Bitcoin Candle Charts: How to Read BTC Candlesticks and Live Market Data",
+            "category": "Trading",
+            "description": "Master Bitcoin candlestick patterns and technical analysis to improve your trading decisions and market timing."
         }
     ]
 }
