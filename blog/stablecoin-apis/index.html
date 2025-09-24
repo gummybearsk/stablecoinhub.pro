@@ -43,10 +43,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <script>
-    // Redirect from www to non-www
-    if (window.location.hostname === 'www.stablecoinhub.pro') {
-        window.location.href = 'https://stablecoinhub.pro' + window.location.pathname + window.location.search + window.location.hash;
-    }
+    
     // Remove query parameters from canonical URL dynamically
     if (window.location.search) {
         var canonicalTag = document.querySelector('link[rel="canonical"]');

@@ -88,6 +88,21 @@
     }
     </script>
 <script>
+    
+    // Remove query parameters from canonical URL dynamically
+    if (window.location.search) {
+        var canonicalTag = document.querySelector('link[rel="canonical"]');
+        if (canonicalTag) {
+            var cleanUrl = window.location.origin + window.location.pathname;
+            if (window.location.pathname.endsWith('/index.html')) {
+                cleanUrl = cleanUrl.replace('/index.html', '/');
+            }
+            canonicalTag.setAttribute('href', cleanUrl);
+        }
+    }
+</script>
+
+<script>
     // Redirect from www to non-www
     if (window.location.hostname === 'www.stablecoinhub.pro') {
         window.location.href = 'https://stablecoinhub.pro' + window.location.pathname + window.location.search + window.location.hash;
@@ -104,7 +119,6 @@
         }
     }
 </script>
-
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Navigation -->
