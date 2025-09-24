@@ -103,10 +103,7 @@
 </script>
 
 <script>
-    // Redirect from www to non-www
-    if (window.location.hostname === 'www.stablecoinhub.pro') {
-        window.location.href = 'https://stablecoinhub.pro' + window.location.pathname + window.location.search + window.location.hash;
-    }
+    
     // Remove query parameters from canonical URL dynamically
     if (window.location.search) {
         var canonicalTag = document.querySelector('link[rel="canonical"]');
