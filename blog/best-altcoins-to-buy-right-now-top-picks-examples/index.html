@@ -9,7 +9,7 @@
     <meta property="og:description" content="Essential information about coins, their value, history, and collection potential.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.stablecoinhub.pro/blog/best-altcoins-to-buy-right-now-top-picks-examples/">
-    <link rel="canonical" href="https://www.stablecoinhub.pro/blog/best-altcoins-to-buy-right-now-top-picks-examples/">
+    <link rel="canonical" href="https://stablecoinhub.pro/blog/best-altcoins-to-buy-right-now-top-picks-examples/">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Google tag (gtag.js) -->
@@ -20,6 +20,23 @@
       gtag('js', new Date());
       gtag('config', 'G-GX6EB7DSFL');
     </script>
+<script>
+    // Redirect from www to non-www
+    if (window.location.hostname === 'www.stablecoinhub.pro') {
+        window.location.href = 'https://stablecoinhub.pro' + window.location.pathname + window.location.search + window.location.hash;
+    }
+    // Remove query parameters from canonical URL dynamically
+    if (window.location.search) {
+        var canonicalTag = document.querySelector('link[rel="canonical"]');
+        if (canonicalTag) {
+            var cleanUrl = window.location.origin + window.location.pathname;
+            if (window.location.pathname.endsWith('/index.html')) {
+                cleanUrl = cleanUrl.replace('/index.html', '/');
+            }
+            canonicalTag.setAttribute('href', cleanUrl);
+        }
+    }
+</script>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <!-- Navigation -->
