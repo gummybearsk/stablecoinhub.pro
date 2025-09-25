@@ -6,6 +6,11 @@ on:
     - cron: '0 9 * * *'
   workflow_dispatch: # Allow manual triggering
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   publish-blogs:
     runs-on: ubuntu-latest
