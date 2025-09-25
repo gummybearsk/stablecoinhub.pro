@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Tool - StableCoin Hub</title>
+    <script>
+        // Clean URL and remove query parameters while preserving tracking
+        (function() {
+            // Check if URL has query parameters
+            if (window.location.search) {
+                // Extract any tracking parameters we want to preserve
+                const urlParams = new URLSearchParams(window.location.search);
+                const ref = urlParams.get('ref');
+                const utm_source = urlParams.get('utm_source');
+                const utm_campaign = urlParams.get('utm_campaign');
+
+                // Store tracking info in sessionStorage
+                if (ref) sessionStorage.setItem('ref_source', ref);
+                if (utm_source) sessionStorage.setItem('utm_source', utm_source);
+                if (utm_campaign) sessionStorage.setItem('utm_campaign', utm_campaign);
+
+                // Clean URL without reload - just update the address bar
+                const cleanUrl = window.location.protocol + '//' + window.location.host + window.location.pathname;
+                window.history.replaceState({}, document.title, cleanUrl);
+            }
+
+            // Ensure we're on www subdomain
+            if (window.location.hostname === 'stablecoinhub.pro') {
+                window.location.href = 'https://www.stablecoinhub.pro' + window.location.pathname + window.location.search + window.location.hash;
+            }
+        })();
+    </script>
     <meta name="description" content="Submit your stablecoin tool or platform to be featured on StableCoin Hub directory.">
     <link rel="canonical" href="https://www.stablecoinhub.pro/submit/">
     <script src="https://cdn.tailwindcss.com"></script>
