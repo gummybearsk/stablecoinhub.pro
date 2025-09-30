@@ -24,6 +24,20 @@ BLOG_SCHEDULE = {
             "description": "Learn how to earn passive income through stablecoin lending in DeFi. Compare top platforms, understand risks, and maximize your yields."
         }
     ],
+    "2025-09-30": [
+        {
+            "url": "stablecoin-defi-lending",
+            "title": "Stablecoin DeFi Lending: Complete Guide to Earning Passive Income",
+            "category": "DeFi",
+            "description": "Learn how to earn passive income through stablecoin lending in DeFi. Compare top platforms, understand risks, and maximize your yields."
+        },
+        {
+            "url": "stablecoin-yield-farming-guide",
+            "title": "Stablecoin Yield Farming: Ultimate Guide to Maximizing Returns",
+            "category": "DeFi",
+            "description": "Master yield farming with stablecoins. Learn strategies, compare platforms, and understand the risks and rewards of DeFi yield farming."
+        }
+    ],
     "2025-10-01": [
         {
             "url": "best-stablecoin-exchanges-2025",
@@ -355,4 +369,5 @@ def main():
     return published_count
 
 if __name__ == "__main__":
-    exit(0 if main() > 0 else 1)
+    main()
+    exit(0)
