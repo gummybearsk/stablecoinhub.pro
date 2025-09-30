@@ -7,6 +7,39 @@
     <meta name="description" content="Comprehensive comparison of Tether (USDT) and USD Coin (USDC), analyzing safety, transparency, and use cases.">
     <link rel="canonical" href="https://www.stablecoinhub.pro/blog/usdt-vs-usdc/">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GX6EB7DSFL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GX6EB7DSFL');
+    </script>
+
+<!-- Query Parameter Handler for SEO -->
+<script>
+(function() {
+    // Handle URL query parameters (utm_source, utm_medium, etc.)
+    if (window.location.search) {
+        // Update canonical tag to exclude query parameters
+        var canonicalTag = document.querySelector('link[rel="canonical"]');
+        if (canonicalTag) {
+            var cleanUrl = 'https://www.stablecoinhub.pro' + window.location.pathname;
+            if (cleanUrl.endsWith('/index.html')) {
+                cleanUrl = cleanUrl.replace('/index.html', '/');
+            }
+            canonicalTag.setAttribute('href', cleanUrl);
+        }
+
+        // Add meta tag to indicate parameter handling
+        var metaTag = document.createElement('meta');
+        metaTag.name = 'url-parameters-handled';
+        metaTag.content = 'true';
+        document.head.appendChild(metaTag);
+    }
+})();
+</script>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <nav class="bg-white shadow-lg sticky top-0 z-50">

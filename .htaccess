@@ -1,0 +1,14 @@
+# Redirect from blog subdomain to main domain blog folder
+RewriteEngine On
+
+# Redirect blog.stablecoinhub.pro to www.stablecoinhub.pro/blog
+RewriteCond %{HTTP_HOST} ^blog\.stablecoinhub\.pro$ [NC]
+RewriteRule ^(.*)$ https://www.stablecoinhub.pro/blog/$1 [R=301,L]
+
+# Ensure www redirect
+RewriteCond %{HTTP_HOST} ^stablecoinhub\.pro$ [NC]
+RewriteRule ^(.*)$ https://www.stablecoinhub.pro/$1 [R=301,L]
+
+# Remove query parameters from canonical URLs
+RewriteCond %{QUERY_STRING} ^utm_source=
+RewriteRule ^(.*)$ /$1? [R=301,L]

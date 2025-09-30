@@ -1,0 +1,8 @@
+# Redirect blog subdomain to main domain blog folder
+https://blog.stablecoinhub.pro/* https://www.stablecoinhub.pro/blog/:splat 301!
+
+# Ensure www redirect
+https://stablecoinhub.pro/* https://www.stablecoinhub.pro/:splat 301!
+
+# Handle common paths
+/blog https://www.stablecoinhub.pro/blog/ 301!

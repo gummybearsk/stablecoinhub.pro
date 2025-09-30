@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "https://blog.stablecoinhub.pro/:path*",
+      "destination": "https://www.stablecoinhub.pro/blog/:path*",
+      "permanent": true
+    },
+    {
+      "source": "https://stablecoinhub.pro/:path*",
+      "destination": "https://www.stablecoinhub.pro/:path*",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
+}

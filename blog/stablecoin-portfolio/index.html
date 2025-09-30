@@ -71,6 +71,31 @@
         }
     }
 </script>
+
+<!-- Query Parameter Handler for SEO -->
+<script>
+(function() {
+    // Handle URL query parameters (utm_source, utm_medium, etc.)
+    if (window.location.search) {
+        // Update canonical tag to exclude query parameters
+        var canonicalTag = document.querySelector('link[rel="canonical"]');
+        if (canonicalTag) {
+            var cleanUrl = 'https://www.stablecoinhub.pro' + window.location.pathname;
+            if (cleanUrl.endsWith('/index.html')) {
+                cleanUrl = cleanUrl.replace('/index.html', '/');
+            }
+            canonicalTag.setAttribute('href', cleanUrl);
+        }
+
+        // Add meta tag to indicate parameter handling
+        var metaTag = document.createElement('meta');
+        metaTag.name = 'url-parameters-handled';
+        metaTag.content = 'true';
+        document.head.appendChild(metaTag);
+    }
+})();
+</script>
+
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
