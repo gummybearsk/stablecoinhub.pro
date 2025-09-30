@@ -2,6 +2,7 @@
 """
 Auto-publish scheduled blog posts based on the publishing schedule.
 This script runs daily via GitHub Actions and publishes blogs for the current date.
+ENHANCED: Now includes quality validation to prevent short or duplicate blogs from publishing.
 """
 
 import os
@@ -13,6 +14,51 @@ import json
 
 # Import blog schedule from parent directory
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+# Import blog quality validator
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    from blog_quality_validator import BlogQualityValidator
+    QUALITY_CHECK_ENABLED = True
+except ImportError:
+    print("⚠️ Blog quality validator not found. Publishing without quality checks.")
+    QUALITY_CHECK_ENABLED = False
+
+def validate_blog_quality(blog_path):
+    """Validate blog quality before publishing."""
+    if not QUALITY_CHECK_ENABLED:
+        return True
+
+    if not Path(blog_path).exists():
+        print(f"⚠️ Blog file not found: {blog_path}")
+        return False
+
+    validator = BlogQualityValidator()
+    blog_name = Path(blog_path).parent.name
+
+    # Check word count specifically
+    with open(blog_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Extract text content
+    text = re.sub(r'<script[^>]*>.*?</script>', '', content, flags=re.DOTALL)
+    text = re.sub(r'<style[^>]*>.*?</style>', '', text, flags=re.DOTALL)
+    text = re.sub(r'<[^>]+>', ' ', text)
+    word_count = len(text.split())
+
+    # Minimum 2500 words required
+    if word_count < 2500:
+        print(f"❌ Blog {blog_name} has only {word_count} words (minimum: 2500)")
+        print(f"   This blog will NOT be published until it has proper content!")
+        return False
+
+    # Check for placeholder content
+    if "Content will be added here" in content or "This article provides expert insights" in content:
+        print(f"❌ Blog {blog_name} contains placeholder content!")
+        return False
+
+    print(f"✅ Blog {blog_name} passed quality check ({word_count} words)")
+    return True
 
 # Dynamic blog schedule - will be updated as needed
 BLOG_SCHEDULE = {
@@ -391,19 +437,35 @@ def main():
         # Check if blog already exists
         if check_blog_exists(blog['url']):
             print(f"⏭️  Blog already exists: {blog['title']}")
+
+            # Validate existing blog quality
+            blog_path = f"blog/{blog['url']}/index.html"
+            if not validate_blog_quality(blog_path):
+                print(f"⚠️  Existing blog {blog['url']} does not meet quality standards!")
+                print(f"   Skipping updates for this blog until content is improved.")
+                continue
             continue
 
         # Create blog directory
         blog_dir = Path(f"blog/{blog['url']}")
         blog_dir.mkdir(parents=True, exist_ok=True)
 
-        # Create blog HTML
+        # Create blog HTML (NOTE: This creates minimal template content)
         html_content = create_blog_html(blog)
 
         # Write blog file
         blog_file = blog_dir / "index.html"
         with open(blog_file, 'w', encoding='utf-8') as f:
             f.write(html_content)
+
+        # IMPORTANT: Validate the newly created blog
+        if not validate_blog_quality(str(blog_file)):
+            print(f"❌ Newly created blog {blog['url']} does not meet quality standards!")
+            print(f"   This blog needs comprehensive content before it can be published.")
+            # Remove the inadequate blog file
+            blog_file.unlink()
+            blog_dir.rmdir()
+            continue
 
         print(f"✅ Published: {blog['title']}")
         print(f"   URL: /blog/{blog['url']}/")
