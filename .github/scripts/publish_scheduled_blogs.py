@@ -236,26 +236,37 @@ def update_blog_index(blog_data):
             </article>'''
 
     # Find the blog grid section and add the new card at the beginning
-    grid_pattern = r'(<div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">)'
+    # Try multiple patterns to find the grid
+    grid_patterns = [
+        r'(<div id="blog-grid" class="grid[^>]*>)',
+        r'(<div class="grid gap-6[^>]*>)',
+        r'(<div class="grid grid-cols-1[^>]*>)'
+    ]
 
-    if re.search(grid_pattern, content):
-        # Insert the new card after the grid opening tag
-        content = re.sub(
-            grid_pattern,
-            r'\1\n' + new_card,
-            content,
-            count=1
-        )
+    updated = False
+    for grid_pattern in grid_patterns:
+        if re.search(grid_pattern, content):
+            # Insert the new card after the grid opening tag
+            content = re.sub(
+                grid_pattern,
+                r'\1\n' + new_card,
+                content,
+                count=1
+            )
 
-        # Save the updated index
-        with open(index_path, 'w', encoding='utf-8') as f:
-            f.write(content)
+            # Save the updated index
+            with open(index_path, 'w', encoding='utf-8') as f:
+                f.write(content)
 
-        print(f"✅ Updated blog index with: {blog_data['title']}")
-        return True
-    else:
+            print(f"✅ Updated blog index with: {blog_data['title']}")
+            updated = True
+            break
+
+    if not updated:
         print("Warning: Could not find blog grid section in index.html")
         return False
+
+    return True
 
 def update_homepage_blog_section(blog_data):
     """Update the homepage with the latest blog post"""
@@ -269,56 +280,100 @@ def update_homepage_blog_section(blog_data):
     with open(homepage_path, 'r', encoding='utf-8') as f:
         content = f.read()
 
-    # Create the new blog entry for homepage
+    # Create the new blog entry for homepage (matching existing format)
     date_str = datetime.now(timezone.utc).strftime("%b %d, %Y")
-    new_blog_entry = f'''                <article class="bg-white rounded-xl shadow-sm hover:shadow-md transition">
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 mb-3">
-                            <span class="bg-indigo-100 text-indigo-600 text-xs px-2 py-1 rounded-full">{blog_data.get('category', 'Guides')}</span>
-                            <span class="text-gray-500 text-sm">{date_str}</span>
+
+    # Get category color scheme
+    category_colors = {
+        'DeFi': ('blue-100', 'blue-600'),
+        'Comparison': ('blue-100', 'blue-600'),
+        'Investment': ('green-100', 'green-600'),
+        'Yield': ('purple-100', 'purple-600'),
+        'Exchanges': ('indigo-100', 'indigo-600'),
+        'Regulation': ('red-100', 'red-600'),
+        'Guides': ('gray-100', 'gray-600')
+    }
+
+    category = blog_data.get('category', 'Guides')
+    bg_color, text_color = category_colors.get(category, ('indigo-100', 'indigo-600'))
+
+    # Truncate title if too long
+    title = blog_data['title']
+    if len(title) > 60:
+        title = title[:57] + '...'
+
+    new_blog_entry = f'''<article class="bg-white rounded-xl p-6 shadow-sm border card-hover">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-{bg_color} text-{text_color} text-xs px-2 py-1 rounded-full">{category}</span>
+                            <span class="text-gray-500 text-sm ml-2">{date_str}</span>
                         </div>
-                        <h3 class="text-lg font-semibold text-gray-900 mb-2">
-                            <a href="/blog/{blog_data['url']}/" class="hover:text-indigo-600 transition">{blog_data['title']}</a>
+                        <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                            <a href="/blog/{blog_data['url']}/" class="hover:text-indigo-600">{title}</a>
                         </h3>
-                        <p class="text-gray-600 text-sm mb-3">{blog_data['description'][:100]}...</p>
-                        <a href="/blog/{blog_data['url']}/" class="text-indigo-600 text-sm font-medium hover:text-indigo-800">
-                            Read more →
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">{blog_data['description']}</p>
+                        <a href="/blog/{blog_data['url']}/" class="inline-flex items-center text-indigo-600 hover:text-indigo-800 text-sm font-medium">
+                            Read Article <i class="fas fa-arrow-right ml-1"></i>
                         </a>
-                    </div>
-                </article>'''
+                    </article>'''
 
-    # Find the "Latest Blog Posts" section and update it
-    if 'Latest Blog Posts' in content:
-        # Pattern to find the blog posts grid
-        pattern = r'(<h2[^>]*>Latest Blog Posts</h2>.*?<div class="grid[^>]*>)(.*?)(</div>\s*</section>)'
+    # Find the "Latest Stablecoin Insights" or blog section and update it
+    section_patterns = [
+        'Latest Stablecoin Insights',
+        'Latest Blog Posts',
+        'Latest Insights',
+        'featured-articles'
+    ]
 
-        def replace_blogs(match):
-            before = match.group(1)
-            blogs = match.group(2)
-            after = match.group(3)
+    found_section = False
+    for section_name in section_patterns:
+        if section_name in content:
+            found_section = True
+            # Pattern to find the blog posts grid
+            patterns = [
+                r'(<div[^>]*id="featured-articles"[^>]*>)(.*?)(</div>)',
+                r'(<h2[^>]*>Latest Stablecoin Insights</h2>.*?<div class="grid[^>]*>)(.*?)(</div>)',
+                r'(<h2[^>]*>Latest Blog Posts</h2>.*?<div class="grid[^>]*>)(.*?)(</div>)'
+            ]
 
-            # Keep only the 3 most recent blogs
-            existing_articles = re.findall(r'<article[^>]*>.*?</article>', blogs, re.DOTALL)
+            updated = False
+            for pattern in patterns:
+                match = re.search(pattern, content, re.DOTALL)
+                if match:
+                    before = match.group(1)
+                    blogs = match.group(2)
+                    after = match.group(3)
 
-            # Add the new blog at the beginning and keep only 3 total
-            updated_blogs = new_blog_entry
-            if existing_articles:
-                # Keep up to 2 more existing blogs
-                for i, article in enumerate(existing_articles[:2]):
-                    updated_blogs += '\n' + article
+                    # Keep only the 3 most recent blogs
+                    existing_articles = re.findall(r'<article[^>]*>.*?</article>', blogs, re.DOTALL)
 
-            return before + '\n' + updated_blogs + '\n            ' + after
+                    # Add the new blog at the beginning and keep only 3 total
+                    updated_blogs = '\n                    ' + new_blog_entry
+                    if existing_articles:
+                        # Keep up to 2 more existing blogs
+                        for i, article in enumerate(existing_articles[:2]):
+                            updated_blogs += '\n\n                    ' + article.strip()
 
-        content = re.sub(pattern, replace_blogs, content, flags=re.DOTALL)
+                    # Replace the content
+                    new_content = before + updated_blogs + '\n                ' + after
+                    content = content.replace(match.group(0), new_content)
 
-        # Save the updated homepage
-        with open(homepage_path, 'w', encoding='utf-8') as f:
-            f.write(content)
+                    # Save the updated homepage
+                    with open(homepage_path, 'w', encoding='utf-8') as f:
+                        f.write(content)
 
-        print(f"✅ Updated homepage with latest blog: {blog_data['title']}")
-        return True
+                    print(f"✅ Updated homepage with latest blog: {blog_data['title']}")
+                    updated = True
+                    break
+
+            if updated:
+                return True
+            break
+
+    if not found_section:
+        print("Warning: Could not find blog section on homepage")
+        return False
     else:
-        print("Warning: Could not find 'Latest Blog Posts' section on homepage")
+        print("Warning: Found section but could not update it")
         return False
 
 def main():
