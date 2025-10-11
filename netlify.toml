@@ -1,12 +1,37 @@
 [[redirects]]
+  from = "https://stablecoinhub.pro/*"
+  to = "https://www.stablecoinhub.pro/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://stablecoinhub.pro/*"
+  to = "https://www.stablecoinhub.pro/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "https://blog.stablecoinhub.pro/*"
   to = "https://www.stablecoinhub.pro/blog/:splat"
   status = 301
   force = true
 
 [[redirects]]
-  from = "https://stablecoinhub.pro/*"
-  to = "https://www.stablecoinhub.pro/:splat"
+  from = "http://blog.stablecoinhub.pro/*"
+  to = "https://www.stablecoinhub.pro/blog/:splat"
+  status = 301
+  force = true
+
+# Handle index.html
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*/index.html"
+  to = "/*/"
   status = 301
   force = true
 

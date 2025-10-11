@@ -1,14 +1,34 @@
-# Redirect from blog subdomain to main domain blog folder
+# Enable Rewrite Engine
 RewriteEngine On
 
-# Redirect blog.stablecoinhub.pro to www.stablecoinhub.pro/blog
-RewriteCond %{HTTP_HOST} ^blog\.stablecoinhub\.pro$ [NC]
-RewriteRule ^(.*)$ https://www.stablecoinhub.pro/blog/$1 [R=301,L]
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://www.stablecoinhub.pro/$1 [R=301,L]
 
-# Ensure www redirect
+# Redirect non-www to www
 RewriteCond %{HTTP_HOST} ^stablecoinhub\.pro$ [NC]
 RewriteRule ^(.*)$ https://www.stablecoinhub.pro/$1 [R=301,L]
 
-# Remove query parameters from canonical URLs
-RewriteCond %{QUERY_STRING} ^utm_source=
+# Redirect blog subdomain to main domain blog folder
+RewriteCond %{HTTP_HOST} ^blog\.stablecoinhub\.pro$ [NC]
+RewriteRule ^(.*)$ https://www.stablecoinhub.pro/blog/$1 [R=301,L]
+
+# Remove index.html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.html\ HTTP/
+RewriteRule ^(([^/]+/)*)index\.html$ https://www.stablecoinhub.pro/$1 [R=301,L]
+
+# Remove query parameters from URLs (but preserve them internally)
+RewriteCond %{QUERY_STRING} ^utm_source=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^utm_medium=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^utm_campaign=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^utm_term=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^utm_content=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^ref=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^gclid=.*$ [OR]
+RewriteCond %{QUERY_STRING} ^fbclid=.*$
 RewriteRule ^(.*)$ /$1? [R=301,L]
+
+# Add trailing slash to directories
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ /$1/ [L,R=301]
